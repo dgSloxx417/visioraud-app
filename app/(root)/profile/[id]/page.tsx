@@ -2,18 +2,24 @@ import Header from "@/components/Header";
 import VideoCard from "@/components/VideoCard";
 import { dummyCards } from "@/constants";
 
-const Page = () => {
+const page = async ({ params }: ParamsWithSearch) => {
+  const { id } = await params;
+
   return (
-    <main className="wrapper page">
-      <Header title="All Videos" subHeader="Public Library" />
+    <div className="wrapper page">
+      <Header
+        subHeader="donkorgerald8@gmail.com"
+        title="Gerald Donkor"
+        userImg="/assets/images/dummy.jpg"
+      />
 
       <section className="video-grid">
         {dummyCards.map((card) => (
           <VideoCard key={card.id} {...card} />
         ))}
       </section>
-    </main>
+    </div>
   );
 };
 
-export default Page;
+export default page;
