@@ -1,7 +1,14 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { authClient } from "@/lib/auth-client";
 
 const page = () => {
+  const handleSignIn = async () => {
+    return await authClient.signIn.social({ provider: "google" });
+  };
+
   return (
     <main className="sign-in">
       <aside className="testimonial">
@@ -65,7 +72,7 @@ const page = () => {
             Create and share your very first <span>Visioraud video</span> in no
             time!
           </p>
-          <button>
+          <button onClick={handleSignIn}>
             <Image
               src="/assets/icons/google.svg"
               alt="google"
@@ -76,7 +83,7 @@ const page = () => {
           </button>
         </section>
       </aside>
-      <div className="overlay"/>
+      <div className="overlay" />
     </main>
   );
 };
