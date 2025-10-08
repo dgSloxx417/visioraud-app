@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://dgSloxx417-s-workspace-plreeu.us-east-1.xata.sh/db/jsm_visioraud",
+  "codegen": {
+    "output": "src/xata.ts"
+  }
+}
